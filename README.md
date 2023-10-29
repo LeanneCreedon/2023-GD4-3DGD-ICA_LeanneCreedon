@@ -1,3 +1,4 @@
-# ICA 3D Game Development Project by Leanne Creedon
+# ICA 3D Game Development Project
+By Leanne Creedon
 
 [ GAME DESCRIPTION WILL GO HERE ]
