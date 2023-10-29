@@ -1,2 +1,3 @@
-# 2023_GD4_3DGD_ICA_LeanneRCreedon
-Repository For My Individual Game Project.
+# ICA 3D Game Development Project by Leanne Creedon
+
+[ GAME DESCRIPTION WILL GO HERE ]
