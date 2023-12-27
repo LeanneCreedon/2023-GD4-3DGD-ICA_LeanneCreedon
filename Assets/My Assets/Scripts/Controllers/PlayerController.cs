@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+
 public class PlayerController : MonoBehaviour
 {
     const string IDLE = "Idle_A";
@@ -32,7 +33,6 @@ public class PlayerController : MonoBehaviour
 
     void ClickToMove()
     {
-        Debug.Log("CLICKED");
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
         {
