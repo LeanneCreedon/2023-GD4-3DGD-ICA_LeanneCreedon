@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class PlayerController : MonoBehaviour
 
     void ClickToMove()
     {
+        // Making sure the player did not click on the UI
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
         {
@@ -50,6 +55,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Making sure the player did not click on the UI
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         FaceTarget();
         SetAnimations();
     }
