@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask clickableLayers;
 
     float lookRotationSpeed = 8f;
+    bool isPointerOverUI = false;
 
     void Awake()
     {
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void ClickToMove()
     {
         // Making sure the player did not click on the UI
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (isPointerOverUI)
             return;
 
         RaycastHit hit;
@@ -57,7 +58,12 @@ public class PlayerController : MonoBehaviour
     {
         // Making sure the player did not click on the UI
         if (EventSystem.current.IsPointerOverGameObject())
+        {
+            isPointerOverUI = true;
             return;
+        }
+        else
+            isPointerOverUI = false;
 
         FaceTarget();
         SetAnimations();

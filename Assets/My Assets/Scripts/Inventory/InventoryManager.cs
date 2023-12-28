@@ -5,12 +5,11 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject slotHolder;
-    [SerializeField] private ItemClass itemToAdd;
-    [SerializeField] private ItemClass itemToRemove;
 
     public List<ItemClass> items = new List<ItemClass>();
 
     private GameObject[] slots;
+    private ItemClass itemToAdd;
 
     public void Start()
     {
@@ -20,8 +19,6 @@ public class InventoryManager : MonoBehaviour
             slots[i] = slotHolder.transform.GetChild(i).gameObject;
 
         RefreshUI();
-        Add(itemToAdd);
-        Remove(itemToRemove);
     }
 
     public void RefreshUI()
@@ -56,5 +53,29 @@ public class InventoryManager : MonoBehaviour
     {
         items.Remove(item);
         RefreshUI();
+    }
+
+    private void PickupItem()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                if (hitInfo.collider.gameObject.tag == "Selectable")
+                {
+                    itemToAdd = hitInfo.collider.GetComponent<Item>().GetItem();
+
+                    Add(itemToAdd);
+                    Destroy(hitInfo.collider.gameObject);
+                }
+            }
+        }
+    }
+
+    void Update()
+    {
+        PickupItem();
     }
 }
