@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     void OnDisable()
     { input.Disable(); }
 
-    void Update()
+    void FixedUpdate()
     {
         // Making sure the player did not click on the UI
         if (EventSystem.current.IsPointerOverGameObject())
@@ -87,41 +87,3 @@ public class PlayerController : MonoBehaviour
         { animator.Play(WALK); }
     }
 }
-
-/*
-using UnityEngine;
-using UnityEngine.AI;
-
-public class PlayerController : MonoBehaviour
-{
-    public Camera cam;
-    public NavMeshAgent player;
-    public Animator playerAnimator;
-    public GameObject targetDest;
-
-    // Update is called once per frame
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitPoint;
-
-            if (Physics.Raycast(ray, out hitPoint))
-            {
-                targetDest.transform.position = hitPoint.point;
-                player.SetDestination(hitPoint.point);
-            }
-        }
-
-        if (player.velocity != Vector3.zero)
-        {
-            playerAnimator.SetBool("isWalking", true);
-        }
-        else if (player.velocity == Vector3.zero)
-        {
-            playerAnimator.SetBool("isWalking", false);
-        }
-    }
-}
-*/

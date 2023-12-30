@@ -3,9 +3,9 @@
 public class Item : MonoBehaviour
 {
     [SerializeField]
-    private ItemClass itemData;
+    private SO_ItemClass itemData;
 
-    public ItemClass GetItem()
+    public SO_ItemClass GetItem()
     {
         return itemData;
     }

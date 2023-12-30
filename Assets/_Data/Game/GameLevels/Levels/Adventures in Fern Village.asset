@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae2ada57d7d65a43ae2bb184143302c, type: 3}
+  m_Name: Adventures in Fern Village
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  UniqueId: 246c7e74-3650-40e4-adde-16fbc0b69d4b
+  LastUpdated: 30/12/23 23:15:39
+  LastUpdatedBy: 
+  Notes: 
+  Description: William has woken up inside his favourite StoryBook Titled 'Adventures
+    in Fern Village'. He is now a Gecko! Explore the animal town, talk to the villagers,
+    complete quests for them and find a way to return home.
+  Scenes:
+  - {fileID: 11400000, guid: 333608519d3cf3f43b9b3bc5947a0dae, type: 2}
+  Objectives:
+  - {fileID: 0}
+  PostProcessPrefab: {fileID: 0}
+  DefaultPostProcessProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823,
+    type: 2}

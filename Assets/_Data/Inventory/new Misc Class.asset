@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d4a292e7ab97140962dc45bc3987d7, type: 3}
   m_Name: new Misc Class
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Misc
   itemIcon: {fileID: 0}
+  PickupClip: {fileID: 0}

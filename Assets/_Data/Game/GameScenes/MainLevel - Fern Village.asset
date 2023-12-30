@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8880ba8af4281429281a713ef7a2e2, type: 3}
+  m_Name: MainLevel - Fern Village
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  UniqueId: 88c457d7-3cfe-4423-8888-e1a5805e2b3d
+  LastUpdated: 30/12/23 16:39:14
+  LastUpdatedBy: 
+  Notes: 
+  Description: Fern Village
+  SceneObject: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
