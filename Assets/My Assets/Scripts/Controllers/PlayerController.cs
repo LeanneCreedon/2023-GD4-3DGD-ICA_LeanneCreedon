@@ -12,11 +12,17 @@ public class PlayerController : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
 
+    public delegate void InputEvents();
+    public static event InputEvents OnInteract;
+    public static event InputEvents OnEnterInteractable;
+    public static event InputEvents OnExitInteractable;
+
     [Header("Movement")]
+    [SerializeField] Vector3 moveVector;
+    [SerializeField] float lookRotationSpeed = 8f;
     [SerializeField] ParticleSystem clickEffect;
     [SerializeField] LayerMask clickableLayers;
 
-    float lookRotationSpeed = 8f;
     bool isPointerOverUI = false;
 
     void Awake()
@@ -31,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void AssignInputs()
     {
         input.Main.Move.performed += ctx => ClickToMove();
+        input.Main.Interact.performed += ctx => EToInteract();
     }
 
     void ClickToMove()
@@ -46,6 +53,11 @@ public class PlayerController : MonoBehaviour
             if (clickEffect != null)
             { Instantiate(clickEffect, hit.point + new Vector3(0, 0.1f, 0), clickEffect.transform.rotation); }
         }
+    }
+
+    private void EToInteract()
+    {
+        if (OnInteract != null) OnInteract();
     }
 
     void OnEnable()
@@ -67,6 +79,22 @@ public class PlayerController : MonoBehaviour
 
         FaceTarget();
         SetAnimations();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (OnEnterInteractable != null) OnEnterInteractable();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (OnExitInteractable != null) OnExitInteractable();
+        }
     }
 
     void FaceTarget()
