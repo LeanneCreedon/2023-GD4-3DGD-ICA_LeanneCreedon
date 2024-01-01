@@ -12,6 +12,8 @@ public class Interactor : MonoBehaviour
 
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
+    [SerializeField] public GameObject interactedObject;
+    [SerializeField] private string interactedObjectName;
 
     private IInteractable _interactable;
 
@@ -25,9 +27,17 @@ public class Interactor : MonoBehaviour
 
             if (_interactable != null)
             {
+                //_gameObject = _colliders[0].gameObject.GetComponent<GameObject>();
+
                 if (!_InteractionPromptUI.IsDisplayed) _InteractionPromptUI.SetUp(_interactable.InteractionPrompt);
 
-                if (Keyboard.current.eKey.wasPressedThisFrame) _interactable.Interact(this);
+                if (Keyboard.current.eKey.wasPressedThisFrame)
+                {
+                    interactedObject = _colliders[0].gameObject;
+                    interactedObjectName = _colliders[0].gameObject.name;
+                    _interactable.Interact(this);
+                }
+
             }
         }
         else

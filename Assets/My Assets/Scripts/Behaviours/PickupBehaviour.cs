@@ -24,7 +24,7 @@ public class PickupBehaviour : MonoBehaviour
             {
                 var itemData = behaviour.ItemData;
                 //raise the event
-                OnPickup?.Raise(itemData);
+                //OnPickup?.Raise(itemData);
                 //play the sound
                 AudioSource.PlayClipAtPoint(itemData.PickupClip,
                     other.gameObject.transform.position);

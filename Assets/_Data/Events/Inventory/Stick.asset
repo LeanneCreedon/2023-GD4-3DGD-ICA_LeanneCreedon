@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stick
   itemIcon: {fileID: 21300000, guid: bf2710d690ef1f44f83667d68baab984, type: 3}
+  isCraftable: 1
   PickupClip: {fileID: 8300000, guid: ede4865e04413f94bb664bc2d575b131, type: 3}

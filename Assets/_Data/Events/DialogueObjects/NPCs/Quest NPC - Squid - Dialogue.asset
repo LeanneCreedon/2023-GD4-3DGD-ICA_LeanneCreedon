@@ -17,6 +17,6 @@ MonoBehaviour:
     dialogueDisplayTime: 1
   - dialogueText: '"...WHERE IS EVERYONE?"'
     dialogueDisplayTime: 2
-  - dialogueText: '"...AFTER ALL MY PREPARATIONS, NO ONE HAS SHOWN UP TO THE BANQUIT..."'
+  - dialogueText: '"...AFTER ALL MY PREPARATIONS, NO ONE HAS SHOWN UP TO THE BANQUET..."'
     dialogueDisplayTime: 4
   endDialogue: {fileID: 0}

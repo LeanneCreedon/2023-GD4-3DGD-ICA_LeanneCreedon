@@ -134,6 +134,8 @@ public class MyGameManager : MonoBehaviour
     {
         OnExit?.Invoke();
         // Do other housekeeping here...
+
+        Debug.Log("Exiting Game...");
         Application.Quit();
     }
 
