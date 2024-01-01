@@ -4,6 +4,7 @@ public class Chest : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
     [SerializeField] private SO_ItemClass itemToFind;
+    [SerializeField] private DialogueInteract dialogueInteract;
 
     public string InteractionPrompt => _prompt;
 
@@ -15,11 +16,11 @@ public class Chest : MonoBehaviour, IInteractable
 
         if (inventory.items.Contains(itemToFind))
         {
-            Debug.Log("Opening Chest!");
+            dialogueInteract.StartDialogue();
             return true;
         }
 
-        Debug.Log("Need Key!");
+        dialogueInteract.StartDialogue();
         return false;
     }
 }

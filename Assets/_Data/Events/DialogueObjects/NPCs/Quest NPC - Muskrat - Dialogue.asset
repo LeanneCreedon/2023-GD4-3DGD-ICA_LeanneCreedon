@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ab152ce5ed43484bbd48efad33e12fa, type: 3}
-  m_Name: Quest 1 - NPC Muskrat - Dialogue
+  m_Name: Quest NPC - Muskrat - Dialogue
   m_EditorClassIdentifier: 
-  dialogueStrings:
-  - Hello there stranger!
-  - My names Mr Ribbit
-  - This old tree fell down
-  - If only there was some way to remove it...
+  dialogueSegments:
+  - dialogueText: '"WHY HELLO THERE STRANGER"'
+    dialogueDisplayTime: 3
+  - dialogueText: '"MY NAME IS MR RIBBIT"'
+    dialogueDisplayTime: 3
+  - dialogueText: '"THIS OLD OAK THREE FELL DOWN IN MY PATH"'
+    dialogueDisplayTime: 3
+  - dialogueText: '"IF ONLY THERE WAS SOME WAY TO REMOVE IT..."'
+    dialogueDisplayTime: 4
   endDialogue: {fileID: 0}

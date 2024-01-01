@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4775badd8b8cc4f4ea2cedeb3b22a973, type: 3}
-  m_Name: OnQuestObjectPickup
+  m_Script: {fileID: 11500000, guid: 2d706c3c83093a94cae28d4c812b84d7, type: 3}
+  m_Name: DialogueData
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  UniqueId: e0c9ff87-1922-4cfd-be92-be95787b3e07
-  LastUpdated: 30/12/23 13:11:11
+  UniqueId: 6a5bf3fb-64fd-43f2-85fa-b02c14e195ef
+  LastUpdated: 01/01/24 01:49:47
   LastUpdatedBy: 
   Notes: 
-  Description: This event is raised when the player clicks to pick up a quest item.
+  Description: 

@@ -17,11 +17,10 @@ public class DialogueInteract : MonoBehaviour
     IEnumerator DisplayDialogue()
     {
         dialogueCanvas.enabled = true;
-        for (int i = 0; i < dialogueObject.dialogueStrings.Count; i++)
+        foreach (var dialogue in dialogueObject.dialogueSegments)
         {
-            Debug.Log(dialogueObject.dialogueStrings[i]);
-            dialogueText.text = dialogueObject.dialogueStrings[i];
-            yield return new WaitForSeconds(1f);
+            dialogueText.text = dialogue.dialogueText;
+            yield return new WaitForSeconds(dialogue.dialogueDisplayTime);
         }
         dialogueCanvas.enabled = false;
     }

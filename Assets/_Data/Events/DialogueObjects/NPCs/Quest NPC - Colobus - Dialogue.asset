@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab152ce5ed43484bbd48efad33e12fa, type: 3}
+  m_Name: Quest NPC - Colobus - Dialogue
+  m_EditorClassIdentifier: 
+  dialogueSegments:
+  - dialogueText: '"HI, THE NAME''S MONTY, P.C. MONTY"'
+    dialogueDisplayTime: 3
+  - dialogueText: '"MY JOB''S TO KEEP THIS TOWN IN ORDER"'
+    dialogueDisplayTime: 3
+  - dialogueText: '"AN IMPORTANT BOOK HAS GONE MISSING THE OTHER DAY"'
+    dialogueDisplayTime: 4
+  - dialogueText: '"IF YOU FIND IT, HAND IT OVER AND I MIGHT CONSIDER GOING JOINING
+      YOU FOR THE MAYORS BANQUET"'
+    dialogueDisplayTime: 5.5
+  endDialogue: {fileID: 0}

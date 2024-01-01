@@ -22,7 +22,6 @@ public class InteractionPromptUI : MonoBehaviour
 
     public void SetUp(string promptText)
     {
-        Debug.Log("SHOW UI");
         _promptText.text = promptText;
         _uiPanel.SetActive(true);
         IsDisplayed = true;
@@ -30,7 +29,6 @@ public class InteractionPromptUI : MonoBehaviour
 
     public void Close()
     {
-        Debug.Log("CLOSE UI");
         _uiPanel.SetActive(false);
         IsDisplayed = false;
     }

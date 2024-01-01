@@ -33,7 +33,6 @@ public class UIInteract : MonoBehaviour
     }
     void Interact()
     {
-        Debug.Log("Interacting");
         OnInteract.Invoke();
     }
 
