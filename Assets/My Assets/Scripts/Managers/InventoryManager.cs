@@ -1,19 +1,34 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField] private GameObject itemCursor;
     [SerializeField] private GameObject slotHolder;
 
-    //public SlotClass[] items;
-    public List<SlotClass> items = new List<SlotClass>();
+    [SerializeField] private SlotClass[] startingItems;
+
+    public SlotClass[] items;
 
     private GameObject[] slots;
 
-    public void Start()
+    private SlotClass movingSlot;
+    private SlotClass tempSlot;
+    private SlotClass originalSlot;
+    bool isMovingItem;
+
+    private void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
+        items = new SlotClass[slots.Length];
+        for (int i = 0; i < items.Length; i++)
+        {
+            items[i] = new SlotClass();
+        }
+        for (int i = 0; i < startingItems.Length; i++)
+        {
+            items[i] = startingItems[i];
+        }
 
         // Set all the slots
         for (int i = 0; i < slotHolder.transform.childCount; i++)
@@ -21,6 +36,27 @@ public class InventoryManager : MonoBehaviour
 
         RefreshUI();
     }
+
+    private void Update()
+    {
+        itemCursor.SetActive(isMovingItem);
+        itemCursor.transform.position = Input.mousePosition;
+        if (isMovingItem)
+            itemCursor.GetComponent<Image>().sprite = movingSlot.GetItem().itemIcon;
+
+        if (Input.GetMouseButtonDown(0)) //we clicked!
+        {
+            //find the closest slot (the slot we clicked on)
+            if (isMovingItem)
+            {
+                EndItemMove();
+            }
+            else
+                BeginItemMove();
+        }
+    }
+
+    #region Inventory Utils
 
     public void RefreshUI()
     {
@@ -39,22 +75,21 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public bool Add(SO_ItemClass item)
+    public bool Add(SO_ItemClass item, int quantity)
     {
         SlotClass slot = Contains(item);
-        if (slot == null)
-            items.Add(new SlotClass(item));
+        if (slot != null)
+            slot.AddQuantity(1);
         else
         {
-            if (items.Count < slots.Length)
+            for (int i = 0; i < items.Length; i++)
             {
-                if (slot.GetItem().isCraftable)
-                    Debug.Log(item.name + "Is Craftable");
-
-                Debug.Log(item.name + " Is NOT Craftable");
+                if (items[i].GetItem() == null) //this is an empty slot
+                {
+                    items[i].AddItem(item, quantity);
+                    break;
+                }
             }
-            else
-                return false;
         }
         RefreshUI();
         return true;
@@ -65,16 +100,22 @@ public class InventoryManager : MonoBehaviour
         SlotClass temp = Contains(item);
         if (temp != null)
         {
-            SlotClass slotToRemove = new SlotClass();
-            foreach (SlotClass slot in items)
+            if (temp.GetQuantity() > 1)
+                temp.SubQuantity(1);
+            else
             {
-                if (slot.GetItem() == item)
+                int slotToRemoveIndex = 0;
+
+                for (int i = 0; i < items.Length; i++)
                 {
-                    slotToRemove = slot;
-                    break;
+                    if (items[i].GetItem() == item)
+                    {
+                        slotToRemoveIndex = i;
+                        break;
+                    }
                 }
+                items[slotToRemoveIndex].Clear();
             }
-            items.Remove(slotToRemove);
         }
         else
         {
@@ -87,107 +128,90 @@ public class InventoryManager : MonoBehaviour
 
     public void HandleItemPickup(SO_ItemClass item)
     {
-        Add(item);
+        Add(item, 1);
     }
 
     public SlotClass Contains(SO_ItemClass item)
     {
-        foreach (SlotClass slot in items)
+        for (int i = 0; i < items.Length; i++)
         {
-            if (slot.GetItem() == item)
-                return slot;
+            if (items[i].GetItem() == item)
+                return items[i];
         }
         return null;
     }
-}
 
-/*
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+    #endregion Inventory Utils
 
-public class InventoryManager : MonoBehaviour
-{
-    [SerializeField] private GameObject slotHolder;
+    #region Dragging Inventory Items
 
-    public List<SO_ItemClass> items = new List<SO_ItemClass>();
-
-    private GameObject[] slots;
-
-    public void Start()
+    private bool BeginItemMove()
     {
-        slots = new GameObject[slotHolder.transform.childCount];
-        // Set all the slots
-        for (int i = 0; i < slotHolder.transform.childCount; i++)
-            slots[i] = slotHolder.transform.GetChild(i).gameObject;
+        originalSlot = GetClosestSlot();
+        if (originalSlot == null || originalSlot.GetItem() == null)
+            return false; // There is no item to move!
 
-        RefreshUI();
-    }
-
-    public void RefreshUI()
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            try
-            {
-                slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().enabled = true;
-                slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = items[i].itemIcon;
-            }
-            catch
-            {
-                slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = null;
-                slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().enabled = false;
-            }
-        }
-    }
-
-    public bool Add(SO_ItemClass item)
-    {
-        if (items.Count < slots.Length)
-            items.Add(item);
-        else
-            return false;
-
+        movingSlot = new SlotClass(originalSlot); // Item in our hand!
+        originalSlot.Clear();
+        isMovingItem = true;
         RefreshUI();
         return true;
     }
 
-    public void Remove(SO_ItemClass item)
+    private bool EndItemMove()
     {
-        items.Remove(item);
-        RefreshUI();
-    }
-
-    public void HandleItemPickup(SO_ItemClass item)
-    {
-        Add(item);
-
-        // ANOTHER METHOD USING TAG
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hitInfo;
-        //    if (Physics.Raycast(ray, out hitInfo))
-        //    {
-        //        if (hitInfo.collider.gameObject.tag == "Selectable")
-        //        {
-        //            itemToAdd = hitInfo.collider.GetComponent<Item>().GetItem();
-
-        //            Add(itemToAdd);
-        //            //Destroy(hitInfo.collider.gameObject);
-        //        }
-        //    }
-        //}
-    }
-
-    public bool SearchForItem(SO_ItemClass item)
-    {
-        if (items.Contains(item))
-            return true;
+        originalSlot = GetClosestSlot();
+        if (originalSlot == null)
+        {
+            Add(movingSlot.GetItem(), movingSlot.GetQuantity());
+            movingSlot.Clear();
+        }
         else
-            return false;
-    }
-}
+        {
+            if (originalSlot.GetItem() != null)
+            {
+                if (originalSlot.GetItem() == movingSlot.GetItem())
+                {
+                    // if (originalSlot.GetItem().isCraftable)
+                    // {
+                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+                    movingSlot.Clear();
+                    // }
+                    // else
+                    // return false;
+                }
+                else
+                {
+                    tempSlot = new SlotClass(originalSlot); //a=b
+                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity()); //b=c
+                    movingSlot.AddItem(tempSlot.GetItem(), tempSlot.GetQuantity()); //a=c
+                    RefreshUI();
+                    return true;
+                }
+            }
+            else //place item as usual
+            {
+                originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+                movingSlot.Clear();
+            }
+        }
 
-*/
+        isMovingItem = false;
+        RefreshUI();
+        return true;
+    }
+
+    private SlotClass GetClosestSlot()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 32)
+                return items[i];
+        }
+
+        return null;
+    }
+
+    #endregion Dragging Inventory Items
+
+}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSegments:
   - dialogueText: YOU FOUND AN APPLE!
-    dialogueDisplayTime: 3
+    dialogueDisplayTime: 1
   endDialogue: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSegments:
   - dialogueText: YOU FOUND A LEAF!
-    dialogueDisplayTime: 2
+    dialogueDisplayTime: 1
   - dialogueText: IT IS NOT MUCH USE AS IT IS...
-    dialogueDisplayTime: 3
+    dialogueDisplayTime: 2
   endDialogue: {fileID: 0}

@@ -4,43 +4,36 @@ public class Pickup : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
     [SerializeField] private DialogueInteract dialogueInteract;
-    [SerializeField] private ItemDataGameEvent eventPickup;
+    [SerializeField] private ItemDataGameEvent OnPickup;
 
-    private SO_ItemClass item;
     private GameObject itemGO;
 
     public string InteractionPrompt => _prompt;
 
     public bool Interact(Interactor interactor)
     {
-        dialogueInteract.StartDialogue();
-        //eventPickup.Raise(interactor.gameObject.GetComponent<SO_ItemClass>().GetItem());
-        //eventPickup.Raise(interactor.gameObject.GetComponent<SlotClass>().GetItem());
+
         itemGO = GameObject.Find(interactor.interactedObject.name);
-        //item = itemGO.GetComponent<SO_ItemClass>();
-        SO_ItemClass item = itemGO.GetComponent<SO_ItemClass>();
+        Collider collider = itemGO.GetComponent<Collider>();
 
-        Debug.Log("NAME = " + interactor.interactedObject.name);
-        Debug.Log("GAME OBJECT = " + itemGO);
-
-        Debug.Log("ITEM OBJECT = " + item.name);
-        Debug.Log("ITEM OBJECT = " + item.GetItem());
-
-
-
-        PickupObject(item);
+        PickupObject(collider);
+        dialogueInteract.StartDialogue();
         return true;
     }
 
-    private bool PickupObject(SO_ItemClass item)
+    private bool PickupObject(Collider other)
     {
-        if (item != null)
+        if (other != null)
         {
-            eventPickup.Raise(item);
-            Destroy(item);
+            var behaviour = other.gameObject.GetComponent<Item>();
+            var itemData = behaviour.GetItem();
+
+            OnPickup.Raise(itemData);
+            AudioSource.PlayClipAtPoint(itemData.PickupClip, itemGO.transform.position);
+
+            Destroy(itemGO);
             return true;
         }
-        else
-            return false;
+        return false;
     }
 }
