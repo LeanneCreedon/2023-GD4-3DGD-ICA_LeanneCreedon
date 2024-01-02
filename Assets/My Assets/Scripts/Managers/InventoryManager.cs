@@ -1,10 +1,13 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject itemCursor;
     [SerializeField] private GameObject slotHolder;
+    [SerializeField] private CraftingManager craftingManager;
+    //[SerializeField] private ItemDataGameEvent craftEvent;
 
     [SerializeField] private SlotClass[] startingItems;
 
@@ -16,6 +19,7 @@ public class InventoryManager : MonoBehaviour
     private SlotClass tempSlot;
     private SlotClass originalSlot;
     bool isMovingItem;
+    bool isCrafting;
 
     private void Start()
     {
@@ -39,9 +43,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        itemCursor.SetActive(isMovingItem);
+        itemCursor.SetActive(isMovingItem && !isCrafting);
         itemCursor.transform.position = Input.mousePosition;
-        if (isMovingItem)
+        if (isMovingItem && !isCrafting)
             itemCursor.GetComponent<Image>().sprite = movingSlot.GetItem().itemIcon;
 
         if (Input.GetMouseButtonDown(0)) //we clicked!
@@ -66,11 +70,18 @@ public class InventoryManager : MonoBehaviour
             {
                 slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().enabled = true;
                 slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = items[i].GetItem().itemIcon;
+
+                if (items[i].GetItem().isStackable)
+                    slots[i].transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = items[i].GetQuantity() + "";
+                else
+                    slots[i].transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
             }
+
             catch
             {
                 slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = null;
                 slots[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().enabled = false;
+                slots[i].transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
             }
         }
     }
@@ -118,9 +129,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
         else
-        {
             return false;
-        }
 
         RefreshUI();
         return true;
@@ -128,7 +137,8 @@ public class InventoryManager : MonoBehaviour
 
     public void HandleItemPickup(SO_ItemClass item)
     {
-        Add(item, 1);
+        if (item != null)
+            Add(item, 1);
     }
 
     public SlotClass Contains(SO_ItemClass item)
@@ -172,19 +182,30 @@ public class InventoryManager : MonoBehaviour
             {
                 if (originalSlot.GetItem() == movingSlot.GetItem())
                 {
-                    // if (originalSlot.GetItem().isCraftable)
-                    // {
-                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
-                    movingSlot.Clear();
-                    // }
-                    // else
-                    // return false;
+                    if (originalSlot.GetItem().isStackable)
+                    {
+                        originalSlot.AddQuantity(movingSlot.GetQuantity());
+                        movingSlot.Clear();
+                    }
+                    else
+                        return false;
                 }
                 else
                 {
-                    tempSlot = new SlotClass(originalSlot); //a=b
-                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity()); //b=c
-                    movingSlot.AddItem(tempSlot.GetItem(), tempSlot.GetQuantity()); //a=c
+                    if (craftingManager.CanCraft(originalSlot.GetItem(), movingSlot.GetItem())) //craft
+                    {
+                        isCrafting = true;
+                        // Raise the crafted event
+                        craftingManager.CraftItems(originalSlot.GetItem(), movingSlot.GetItem());
+                        movingSlot.Clear();
+                    }
+                    else
+                    {
+                        tempSlot = new SlotClass(originalSlot); //a=b
+                        originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity()); //b=c
+                        movingSlot.AddItem(tempSlot.GetItem(), tempSlot.GetQuantity()); //a=c
+                    }
+
                     RefreshUI();
                     return true;
                 }
@@ -197,6 +218,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         isMovingItem = false;
+        isCrafting = false;
         RefreshUI();
         return true;
     }

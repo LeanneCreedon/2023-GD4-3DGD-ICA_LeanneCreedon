@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Misc
   itemIcon: {fileID: 0}
+  isStackable: 1
+  isCraftable: 1
   PickupClip: {fileID: 0}

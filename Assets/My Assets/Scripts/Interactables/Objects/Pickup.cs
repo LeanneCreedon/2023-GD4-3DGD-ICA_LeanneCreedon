@@ -12,7 +12,6 @@ public class Pickup : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-
         itemGO = GameObject.Find(interactor.interactedObject.name);
         Collider collider = itemGO.GetComponent<Collider>();
 
@@ -28,7 +27,10 @@ public class Pickup : MonoBehaviour, IInteractable
             var behaviour = other.gameObject.GetComponent<Item>();
             var itemData = behaviour.GetItem();
 
+            //OnPickup.Raise(itemData);
+
             OnPickup.Raise(itemData);
+
             AudioSource.PlayClipAtPoint(itemData.PickupClip, itemGO.transform.position);
 
             Destroy(itemGO);

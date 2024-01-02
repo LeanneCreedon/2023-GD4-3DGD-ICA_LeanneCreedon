@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: FireTorch
   itemIcon: {fileID: 21300000, guid: e33bcddf36d5c8f4c8f81e2f1898ef9f, type: 3}
-  PickupClip: {fileID: 0}
+  isStackable: 0
+  PickupClip: {fileID: 8300000, guid: ede4865e04413f94bb664bc2d575b131, type: 3}
