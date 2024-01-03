@@ -6,6 +6,7 @@ public class CraftingManager : MonoBehaviour
     [SerializeField] public CraftingRecipe[] craftingRecipes;
 
     private SO_ItemClass craftResult;
+    private CraftItem craftItemResponse;
 
     public void CraftItems(SO_ItemClass item1, SO_ItemClass item2)
     {
@@ -16,6 +17,11 @@ public class CraftingManager : MonoBehaviour
 
             inventory.Add(craftResult, 1);
         }
+    }
+
+    public void HandleCraftResponse()
+    {
+        craftItemResponse.CraftResponse();
     }
 
     public bool CanCraft(SO_ItemClass item1, SO_ItemClass item2)

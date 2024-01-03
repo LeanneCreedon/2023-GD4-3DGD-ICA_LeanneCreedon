@@ -3,32 +3,39 @@
 public class Chest : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
-    [SerializeField] private SO_ItemClass itemToFind;
+    [SerializeField] private SlotClass itemToFind;
+    [SerializeField] private SlotClass itemInside;
     [SerializeField] private DialogueInteract dialogueInteract;
+    [SerializeField] private InventoryManager inventory;
+    [SerializeField] public ItemDataGameEvent OnPickup, OnRemove;
 
-    [SerializeField] public bool isOpen = false;
+    [SerializeField] public bool isOpen;
+    //[SerializeField] public bool hasKey;
     [SerializeField] public Animator animator;
+    [SerializeField] public Bag bag;
 
     public string InteractionPrompt => _prompt;
 
     public bool Interact(Interactor interactor)
     {
         dialogueInteract.StartDialogue();
-        return true;
-        /*
-        var inventory = interactor.inventory;
-
-        if (inventory == null) { return false; }
-
-        if (inventory.items.Contains(itemToFind.GetItem())
+        if (bag.hasKey)
         {
-            dialogueInteract.StartDialogue();
+            // Set Animation
             isOpen = true;
-            animator.SetBool("IsOpen", isOpen);
-            return true;
-        }
+            animator.SetBool("isOpen", isOpen);
 
-        return false;
-        */
+            Debug.Log(itemInside.GetItem());
+
+            if (inventory.Contains(itemInside.GetItem()) == null)
+            {
+                // Add Book to Inventory
+                OnPickup.Raise(itemInside.GetItem());
+            }
+
+            // Remove Key from Inventory
+            OnRemove.Raise(itemToFind.GetItem());
+        }
+        return true;
     }
 }

@@ -27,7 +27,7 @@ public class Bag : MonoBehaviour, IInteractable
     IEnumerator DelayKeyAdd()
     {
         hasKey = true;
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(7);
 
         searchEvent.Raise();
     }

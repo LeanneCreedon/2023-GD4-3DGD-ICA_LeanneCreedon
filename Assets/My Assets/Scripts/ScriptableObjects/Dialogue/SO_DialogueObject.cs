@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DialogueObject", menuName = "Scriptable Objects/Dialogue/NPC Dialogue Object")]
+[CreateAssetMenu(fileName = "DialogueObject", menuName = "Scriptable Objects/Dialogue/Dialogue Object")]
 public class SO_DialogueObject : ScriptableObject
 {
     [Header("Dialogue")]

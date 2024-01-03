@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask clickableLayers;
 
     bool isPointerOverUI = false;
+    RaycastHit hit;
+    Ray ray;
 
     void Awake()
     {
@@ -46,7 +48,15 @@ public class PlayerController : MonoBehaviour
         if (isPointerOverUI)
             return;
 
-        RaycastHit hit;
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.tag == "Selectable")
+            {
+                return;
+            }
+        }
+
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
         {
             agent.destination = hit.point;
@@ -113,5 +123,12 @@ public class PlayerController : MonoBehaviour
         { animator.Play(IDLE); }
         else
         { animator.Play(WALK); }
+    }
+
+    private void OnCollisionEnter(Collision collisionInfo)
+    {
+        if (collisionInfo.collider.tag == "Selectable")
+            Debug.Log("We hit : " + collisionInfo.collider.name);
+
     }
 }

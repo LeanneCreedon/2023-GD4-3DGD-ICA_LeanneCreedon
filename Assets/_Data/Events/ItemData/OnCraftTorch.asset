@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9773cfc34c60f74ea7756782ddf1633, type: 3}
+  m_Script: {fileID: 11500000, guid: 4775badd8b8cc4f4ea2cedeb3b22a973, type: 3}
   m_Name: OnCraftTorch
   m_EditorClassIdentifier: 
   serializationData:
@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  UniqueId: 5571ed3f-d14a-498c-b4e6-f831ff237aea
-  LastUpdated: 02/01/24 15:53:38
+  UniqueId: cfe61b9c-b449-48e0-b487-24713a82200a
+  LastUpdated: 02/01/24 18:20:21
   LastUpdatedBy: 
   Notes: 
   Description: 

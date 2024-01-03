@@ -7,7 +7,6 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject itemCursor;
     [SerializeField] private GameObject slotHolder;
     [SerializeField] private CraftingManager craftingManager;
-    //[SerializeField] private ItemDataGameEvent craftEvent;
 
     [SerializeField] private SlotClass[] startingItems;
 
@@ -18,8 +17,13 @@ public class InventoryManager : MonoBehaviour
     private SlotClass movingSlot;
     private SlotClass tempSlot;
     private SlotClass originalSlot;
+    private Interactor interactor;
+    private IInteractable interactable;
     bool isMovingItem;
     bool isCrafting;
+    bool isOverInteractable;
+    RaycastHit hit;
+    Ray ray;
 
     private void Start()
     {
@@ -47,6 +51,17 @@ public class InventoryManager : MonoBehaviour
         itemCursor.transform.position = Input.mousePosition;
         if (isMovingItem && !isCrafting)
             itemCursor.GetComponent<Image>().sprite = movingSlot.GetItem().itemIcon;
+
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.tag == "Selectable")
+            {
+                isOverInteractable = true;
+            }
+        }
+        else
+            isOverInteractable = false;
 
         if (Input.GetMouseButtonDown(0)) //we clicked!
         {
@@ -139,6 +154,12 @@ public class InventoryManager : MonoBehaviour
     {
         if (item != null)
             Add(item, 1);
+    }
+
+    public void HandleRemoveItem(SO_ItemClass item)
+    {
+        if (item != null)
+            Remove(item);
     }
 
     public SlotClass Contains(SO_ItemClass item)

@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5831955436677250950
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.58006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.72482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -77.66563
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_Name
+      value: Interactable - Bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4101047976703648053}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3278841981870683612}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7124286335129424139}
+  m_SourcePrefab: {fileID: 100100000, guid: 79321e0118699b344a5712657a9bb4a6, type: 3}
+--- !u!1 &6642296270247625431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79321e0118699b344a5712657a9bb4a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5831955436677250950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &4101047976703648053
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642296270247625431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.42
+  m_Center: {x: 0.003046751, y: 0.28557938, z: 0.009360269}
+--- !u!114 &3278841981870683612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642296270247625431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af7d2b14916e8a48a643def63a910b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prompt: SEARCH
+  dialogueInteract: {fileID: 7124286335129424139}
+  searchEvent: {fileID: 11400000, guid: c8539af290a9ba34991b33ecbf593a26, type: 2}
+  hasKey: 0
+--- !u!114 &7124286335129424139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642296270247625431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bfa139ec883b542b3337525174d4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueCanvas: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogueObject: {fileID: 11400000, guid: e84b778416bfab04c8e2d685ba158ec9, type: 2}

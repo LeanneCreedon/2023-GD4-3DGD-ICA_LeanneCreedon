@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4775badd8b8cc4f4ea2cedeb3b22a973, type: 3}
-  m_Name: OnCraftItem
+  m_Name: OnRemove
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  UniqueId: cfe61b9c-b449-48e0-b487-24713a82200a
-  LastUpdated: 02/01/24 18:20:21
+  UniqueId: 1e17f547-dfbb-497c-a6a3-c447061890a7
+  LastUpdated: 03/01/24 08:53:01
   LastUpdatedBy: 
   Notes: 
   Description: 
