@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d4a292e7ab97140962dc45bc3987d7, type: 3}
-  m_Name: new Misc Class
+  m_Script: {fileID: 11500000, guid: 1ab152ce5ed43484bbd48efad33e12fa, type: 3}
+  m_Name: Crate - Empty
   m_EditorClassIdentifier: 
-  itemName: Misc
-  itemIcon: {fileID: 0}
-  isStackable: 1
-  isCraftable: 1
-  PickupClip: {fileID: 0}
+  dialogueSegments:
+  - dialogueText: ...it's empty
+    dialogueDisplayTime: 2
+  endDialogue: {fileID: 0}

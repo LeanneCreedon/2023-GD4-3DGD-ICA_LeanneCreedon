@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d4a292e7ab97140962dc45bc3987d7, type: 3}
-  m_Name: CampFire
+  m_Script: {fileID: 11500000, guid: c9544f114fdc4fd41a30f7f77c3b7aac, type: 3}
+  m_Name: EmptyCrate
   m_EditorClassIdentifier: 
-  itemName: CampFire
+  itemName: Empty Crate
   itemIcon: {fileID: 0}
   isStackable: 0
-  isCraftable: 1
+  isCraftable: 0
   PickupClip: {fileID: 0}

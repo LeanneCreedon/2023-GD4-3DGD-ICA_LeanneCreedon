@@ -10,6 +10,7 @@ public class Chest : MonoBehaviour, IInteractable
     [SerializeField] public ItemDataGameEvent OnPickup, OnRemove;
 
     [SerializeField] public bool isOpen;
+    [SerializeField] public bool hasInteracted;
     //[SerializeField] public bool hasKey;
     [SerializeField] public Animator animator;
     [SerializeField] public Bag bag;
@@ -22,7 +23,9 @@ public class Chest : MonoBehaviour, IInteractable
         if (bag.hasKey)
         {
             // Set Animation
+            hasInteracted = true;
             isOpen = true;
+            animator.SetBool("hasInteracted", hasInteracted);
             animator.SetBool("isOpen", isOpen);
 
             Debug.Log(itemInside.GetItem());
@@ -36,6 +39,13 @@ public class Chest : MonoBehaviour, IInteractable
             // Remove Key from Inventory
             OnRemove.Raise(itemToFind.GetItem());
         }
+        else
+        {
+            // Set Animation
+            hasInteracted = true;
+            animator.SetBool("hasInteracted", hasInteracted);
+        }
+
         return true;
     }
 }
