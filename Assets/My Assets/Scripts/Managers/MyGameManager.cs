@@ -254,25 +254,25 @@ public class MyGameManager : MonoBehaviour
         }
     }
 
-    private void OnGUI()
-    {
-        if (!mainMenu.activeSelf)
-        {
-            Rect rect = new Rect(10, 10, 160, 40);
+    //private void OnGUI()
+    //{
+    //    if (!mainMenu.activeSelf)
+    //    {
+    //        Rect rect = new Rect(10, 10, 160, 40);
 
-            if (GUI.Button(rect, "Level 1"))
-            {
-                UnLoadLevel(activeLevel);
-                StartCoroutine(LoadAllScenesAsync("level 1"));
-            }
+    //        if (GUI.Button(rect, "Level 1"))
+    //        {
+    //            UnLoadLevel(activeLevel);
+    //            StartCoroutine(LoadAllScenesAsync("level 1"));
+    //        }
 
-            rect = new Rect(180, 10, 160, 40);
+    //        rect = new Rect(180, 10, 160, 40);
 
-            if (GUI.Button(rect, "Level 2"))
-            {
-                UnLoadLevel(activeLevel);
-                StartCoroutine(LoadAllScenesAsync("level 2"));
-            }
-        }
-    }
+    //        if (GUI.Button(rect, "Level 2"))
+    //        {
+    //            UnLoadLevel(activeLevel);
+    //            StartCoroutine(LoadAllScenesAsync("level 2"));
+    //        }
+    //    }
+    //}
 }
