@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Quest NPC - Sparrow - Dialogue
   m_EditorClassIdentifier: 
   dialogueSegments:
-  - dialogueText: '"WHY HELLO THERE FRIEND! ....looks like I got a new customer"'
-    dialogueDisplayTime: 3
+  - dialogueText: '"WHY HELLO THERE FRIEND! .............looks like I got a new customer"'
+    dialogueDisplayTime: 4
   - dialogueText: '"THE MAYOR REALLY WANTS EVERYONE TO GO TO HIS ELECTION BANQUET"'
     dialogueDisplayTime: 4
-  - dialogueText: '"BUT BUT I''M MISSING MY APPLY STOCK! "'
+  - dialogueText: '"BUT I''M MISSING MY APPLE STOCK! "'
     dialogueDisplayTime: 3
   - dialogueText: '"YA SEE THAT EMPTY CRATE OVER THERE?"'
     dialogueDisplayTime: 3
   - dialogueText: '"FIND ME AT LEAST THREE APPLES AND POP THEM IN THAT CRATE, THEN
-      MAYBE I''LL JOING YOU FOR THE MEAL"'
+      MAYBE I''LL JOIN YOU FOR THE MEAL"'
     dialogueDisplayTime: 5
   endDialogue: {fileID: 0}
