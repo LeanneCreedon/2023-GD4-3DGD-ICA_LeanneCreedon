@@ -4,9 +4,7 @@
 public class SlotClass
 {
     [SerializeField] private SO_ItemClass item;
-    //[SerializeField] private int quantity;
-
-    [SerializeField] public int quantity { get; set; }
+    [SerializeField] private int quantity;
 
     public SlotClass()
     {

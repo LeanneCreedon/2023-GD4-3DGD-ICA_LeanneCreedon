@@ -31,11 +31,16 @@ public class Pickup : MonoBehaviour, IInteractable
             OnPickup.Raise(itemData);
 
             AudioSource.PlayClipAtPoint(itemData.PickupClip, itemGO.transform.position);
-
+            //Invoke("DestroyMyObject", 1);
+            //onDestroy.OnRemoveItem(other.gameObject);
             Destroy(other.gameObject);
 
             return true;
         }
         return false;
     }
+    //void DestroyMyObject()
+    //{
+    //    Destroy(gameObject);
+    //}
 }

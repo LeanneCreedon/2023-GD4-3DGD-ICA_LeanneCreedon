@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Leaf
   m_EditorClassIdentifier: 
   itemName: Leaf
-  itemIcon: {fileID: 21300000, guid: e3a373f6ea54b164bbb5d7074b16d671, type: 3}
+  itemIcon: {fileID: 21300000, guid: a9f3dc0ef8469214b9648ca37654f5ee, type: 3}
   isStackable: 0
   isCraftable: 1
   PickupClip: {fileID: 8300000, guid: 56365003ef89f0e489481221874ef44f, type: 3}
