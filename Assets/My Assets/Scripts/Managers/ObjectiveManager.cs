@@ -13,6 +13,8 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI objectiveText;
     [SerializeField] Image backgroundImg;
 
+    int objectiveIndex;
+
     // Singleton pattern to ensure only one instance exists
     private static ObjectiveManager _instance;
     public static ObjectiveManager Instance
@@ -36,7 +38,8 @@ public class ObjectiveManager : MonoBehaviour
     private void Awake()
     {
         //Scale background image to length of text element
-        objectiveText.text = objectives[0].name;
+        objectiveIndex = 0;
+        objectiveText.text = objectives[objectiveIndex].objectiveName;
         //RectTransform uiText = objectiveText.GetComponent<RectTransform>();
         //RectTransform uiImage = backgroundImg.GetComponent<RectTransform>();
         //uiImage.sizeDelta = uiText.sizeDelta;
@@ -71,6 +74,7 @@ public class ObjectiveManager : MonoBehaviour
     private void CheckObjectivesCompletion()
     {
         bool allObjectivesCompleted = true;
+        objectiveText.text = objectives[objectiveIndex++].objectiveName;
 
         foreach (var objective in objectives)
         {
