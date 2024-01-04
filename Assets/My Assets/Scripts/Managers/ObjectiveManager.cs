@@ -10,8 +10,11 @@ public class ObjectiveManager : MonoBehaviour
 {
     public List<SO_Objective> objectives;
 
+    [SerializeField] InventoryManager inventory;
     [SerializeField] TextMeshProUGUI objectiveText;
     [SerializeField] Image backgroundImg;
+
+    int objectiveIndex;
 
     // Singleton pattern to ensure only one instance exists
     private static ObjectiveManager _instance;
@@ -35,11 +38,8 @@ public class ObjectiveManager : MonoBehaviour
 
     private void Awake()
     {
-        //Scale background image to length of text element
-        objectiveText.text = objectives[0].name;
-        //RectTransform uiText = objectiveText.GetComponent<RectTransform>();
-        //RectTransform uiImage = backgroundImg.GetComponent<RectTransform>();
-        //uiImage.sizeDelta = uiText.sizeDelta;
+        objectiveIndex = 0;
+        objectiveText.text = objectives[objectiveIndex].objectiveName;
 
         // Ensure only one instance of ObjectiveManager exists
         if (_instance != null && _instance != this)
@@ -51,7 +51,7 @@ public class ObjectiveManager : MonoBehaviour
             _instance = this;
         }
 
-        // Initialize objectives
+        // Initialize objectives - Setting completed to false initailly
         objectives.ForEach(obj => obj.isCompleted = false);
     }
 
@@ -68,10 +68,15 @@ public class ObjectiveManager : MonoBehaviour
         }
     }
 
-    private void CheckObjectivesCompletion()
+    private void CheckObjectivesCompletion() // check overall completion of objectives
     {
+        // Change the objective UI element
+        objectiveText.text = objectives[objectiveIndex++].objectiveName;
+
+        // initally setting to all complete
         bool allObjectivesCompleted = true;
 
+        // going through list of objectives and search for incomplete objectives
         foreach (var objective in objectives)
         {
             if (!objective.isCompleted)

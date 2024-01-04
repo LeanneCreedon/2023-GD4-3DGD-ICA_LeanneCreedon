@@ -7,6 +7,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject itemCursor;
     [SerializeField] private GameObject slotHolder;
     [SerializeField] private CraftingManager craftingManager;
+    //[SerializeField] private ObjectiveManager objectiveManager;
+
+    //[Header("Sub-Objectives - Pickups")]
+    //[SerializeField] public CollectLeaf collectLeaf;
+    //[SerializeField] public CollectStick collectStick;
+    //[SerializeField] public CollectThreeApples collectThreeApples;
 
     [SerializeField] private SlotClass[] startingItems;
 
@@ -153,7 +159,19 @@ public class InventoryManager : MonoBehaviour
     public void HandleItemPickup(SO_ItemClass item)
     {
         if (item != null)
+        {
             Add(item, 1);
+
+            //if (item.name.Contains("Apple"))
+            //    collectThreeApples.UpdateProgressOnItemPickedUp();
+
+            //if (item.name.Contains("Leaf"))
+            //    collectLeaf.UpdateProgressOnItemPickedUp();
+
+            //if (item.name.Contains("Stick"))
+            //    collectStick.UpdateProgressOnItemPickedUp();
+        }
+
     }
 
     public void HandleRemoveItem(SO_ItemClass item)

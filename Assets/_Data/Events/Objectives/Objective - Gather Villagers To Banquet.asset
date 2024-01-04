@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9375c250604fe4fac28c66b5f9fc17, type: 3}
+  m_Name: Objective - Gather Villagers To Banquet
+  m_EditorClassIdentifier: 
+  objectiveName: Bring the Towns Folk to the Election Celebration Banquet Held Outside
+    the Town Hall
+  description: Take the villagers to the banquet and see what the Mayor has to say
+    of your efforts.
+  isCompleted: 0
+  steps:
+  - stepDescription: Complete - Explore the area
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Complete - Remove tree
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Complete - Collect 3 apples
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Complete - Return apples
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Complete - Find the key
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Complete - Open chest
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Complete - Find the 'Special book'
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Complete - Return book
+    requiredItems: []
+    targetAmount: 1
+    currentAmount: 0

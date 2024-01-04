@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   itemName: Apple
-  itemIcon: {fileID: 21300000, guid: e0c09433a7c2a05449a8518334cebc22, type: 3}
+  itemIcon: {fileID: 21300000, guid: edb9ec573b1ee9147a69aaf9f57533ea, type: 3}
   isStackable: 1
+  isCraftable: 0
   PickupClip: {fileID: 8300000, guid: 924d8caa2dba3794891b645fdb2c8827, type: 3}

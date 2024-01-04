@@ -18,5 +18,5 @@ MonoBehaviour:
   - dialogueText: '"I CHOP TREES DOWN AND CRAFT STUFF"'
     dialogueDisplayTime: 2
   - dialogueText: '"I''LL ONLY GO TO THAT BANQUET IF MY PAL, MY DUDE RUPIN IS THERE!"'
-    dialogueDisplayTime: 5
+    dialogueDisplayTime: 5.5
   endDialogue: {fileID: 0}
