@@ -17,6 +17,4 @@ public struct DialogueSegment
     public string dialogueText;
 
     public float dialogueDisplayTime;
-
-
 }
