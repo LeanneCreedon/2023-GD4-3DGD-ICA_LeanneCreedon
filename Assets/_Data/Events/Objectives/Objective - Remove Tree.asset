@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9375c250604fe4fac28c66b5f9fc17, type: 3}
+  m_Name: Objective - Remove Tree
+  m_EditorClassIdentifier: 
+  objectiveName: Find a way to Remove the Tree Blocking Your Path.
+  description: Find a way to remove the tree blocking the path in order to help Mr
+    Ribbit to get back to town.
+  isCompleted: 0
+  steps:
+  - stepDescription: Collect leaf
+    requiredItems:
+    - {fileID: 11400000, guid: 14de04ad223e5cf4b8b356d98a1114e1, type: 2}
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Collect stick
+    requiredItems:
+    - {fileID: 11400000, guid: 44b55e1e29192324fb76663a6b9b1210, type: 2}
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Craft torch
+    requiredItems:
+    - {fileID: 11400000, guid: ac69c8a5d674bee40868dade72c438ca, type: 2}
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Light torch
+    requiredItems:
+    - {fileID: 11400000, guid: 9b49f7877cabf7642af88d5e39eaa7e5, type: 2}
+    targetAmount: 1
+    currentAmount: 0
+  - stepDescription: Burn tree
+    requiredItems:
+    - {fileID: 11400000, guid: 9b49f7877cabf7642af88d5e39eaa7e5, type: 2}
+    targetAmount: 0
+    currentAmount: 0
