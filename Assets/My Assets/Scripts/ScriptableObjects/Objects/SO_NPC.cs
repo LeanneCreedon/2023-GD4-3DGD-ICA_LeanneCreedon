@@ -18,7 +18,7 @@ public abstract class SO_NPC : ScriptableObject
     public Sprite NPCIcon;
 
     [InlineButton("DoPress", "Press Me")]
-    public AudioClip PickupClip;
+    public AudioClip TalkingAudio;
 
     public abstract SO_NPC GetNPC();
 

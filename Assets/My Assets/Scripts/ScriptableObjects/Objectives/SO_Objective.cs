@@ -16,6 +16,7 @@ public class SO_Objective : ScriptableObject
     public string description;
     public bool isCompleted;
 
+    // Method to mark the objective as complete whenever the sub-objectives/tasks are all completed
     public void MarkAsCompleted()
     {
         isCompleted = true;

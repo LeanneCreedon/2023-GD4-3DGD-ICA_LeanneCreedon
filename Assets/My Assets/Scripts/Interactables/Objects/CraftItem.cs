@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Script to handle the response when item has been crafted - Not Currently in Use
+/// </summary>
 public class CraftItem : MonoBehaviour
 {
     [SerializeField] private Item thisItem;

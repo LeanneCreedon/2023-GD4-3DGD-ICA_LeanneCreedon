@@ -52,7 +52,7 @@ public class NPC : MonoBehaviour, IInteractable
         characterController.enabled = true;
 
         // Stop the mumbling sound
-        audioSource.Stop();
+        //audioSource.Stop();
     }
 
     // Play the sound effect
@@ -65,7 +65,7 @@ public class NPC : MonoBehaviour, IInteractable
         var npcData = behaviour.GetItem();
 
         // Get the audio clip assosiated with that NPC, set in the inspector
-        audioClip = npcData.PickupClip;
+        audioClip = npcData.TalkingAudio;
 
         // Play the audio clip at that point
         AudioSource.PlayClipAtPoint(audioClip, npcGO.transform.position);

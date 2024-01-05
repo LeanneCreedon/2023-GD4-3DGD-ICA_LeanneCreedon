@@ -18,6 +18,7 @@ public class CraftingManager : MonoBehaviour
     private SO_ItemClass craftResult;
     private CraftItem craftItemResponse;
 
+    // If the items can be crafted, remove the two original items from the inventory and add the new one
     public void CraftItems(SO_ItemClass item1, SO_ItemClass item2)
     {
         if (CanCraft(item1, item2))
@@ -34,6 +35,7 @@ public class CraftingManager : MonoBehaviour
         craftItemResponse.CraftResponse();
     }
 
+    // Checking if you can craft these two items based on the recipies list set in the inspector
     public bool CanCraft(SO_ItemClass item1, SO_ItemClass item2)
     {
         // Search through the crafting recipes to find a match

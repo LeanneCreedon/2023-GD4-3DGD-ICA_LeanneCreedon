@@ -27,7 +27,6 @@
 /// Link to GitHub Script used in the Tutorial:
 /// https://github.com/DA-LAB-Tutorials/YouTube-Unity-Tutorials/blob/main/OutlineSelection.cs
 /// ---------------------
-/// Manager Script to manage the players inventory.
 /// </summary>
 
 using UnityEngine;

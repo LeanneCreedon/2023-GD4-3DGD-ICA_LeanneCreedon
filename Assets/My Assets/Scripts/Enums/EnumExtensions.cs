@@ -9,6 +9,7 @@ using System.Reflection;
 /// Niall's Repo 2023_GD4_Introduction:
 /// https://github.com/nmcguinness/2023_GD4_Introduction
 /// accessed - 23/12/2023
+/// ---------------------------
 /// </summary>
 public class EnumExtensions
 {

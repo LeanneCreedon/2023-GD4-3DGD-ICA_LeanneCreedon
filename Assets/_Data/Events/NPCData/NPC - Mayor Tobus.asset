@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCName: Mayor Tobus
   NPCIcon: {fileID: 0}
-  PickupClip: {fileID: 8300000, guid: e153e93da4cc7ba4f93fb6613bda7291, type: 3}
+  TalkingAudio: {fileID: 8300000, guid: e153e93da4cc7ba4f93fb6613bda7291, type: 3}
