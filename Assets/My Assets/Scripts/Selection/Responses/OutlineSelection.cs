@@ -16,6 +16,20 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Tutorial Followed:
+/// Outline Object on Pointer Hover and Selection at Runtime in Unity, DA LAB -
+/// https://www.youtube.com/watch?v=qYnAkMGbgwo
+/// accessed - 30/12/2023
+/// ____________________
+/// Link to GitHub Script used in the Tutorial:
+/// https://github.com/DA-LAB-Tutorials/YouTube-Unity-Tutorials/blob/main/OutlineSelection.cs
+/// ---------------------
+/// Manager Script to manage the players inventory.
+/// </summary>
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 

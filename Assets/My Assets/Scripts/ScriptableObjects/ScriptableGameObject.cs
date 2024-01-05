@@ -2,6 +2,15 @@ using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 29/12/2023
+/// ---------------------
+/// Serialized Scriptable Object to hold info related to developer(s).
+/// </summary>
 public class ScriptableGameObject : SerializedScriptableObject
 {
     private static readonly string LastUpdateStringFormat = "dd/MM/yy HH:mm:ss";

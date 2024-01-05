@@ -1,5 +1,15 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Tutorial Followed:
+/// Unity Interaction System | How To Interact With Any Game Object In Unity, Dan Pos -
+/// https://www.youtube.com/watch?v=THmW4YolDok&t=861s
+/// accessed - 23/12/2023
+/// ---------------------
+/// Script for handling the interaction response between the player and the chest object.
+/// </summary>
 public class Chest : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
@@ -11,15 +21,18 @@ public class Chest : MonoBehaviour, IInteractable
 
     [SerializeField] public bool isOpen;
     [SerializeField] public bool hasInteracted;
-    //[SerializeField] public bool hasKey;
     [SerializeField] public Animator animator;
     [SerializeField] public Bag bag;
 
     public string InteractionPrompt => _prompt;
 
+    // Called when the player interacts with the campfire
     public bool Interact(Interactor interactor)
     {
+        // Begin dialogue, which is a message telling the player they need the key to open the chest.
         dialogueInteract.StartDialogue();
+
+        // If the player has the key, do the following
         if (bag.hasKey)
         {
             // Set Animation
@@ -28,8 +41,7 @@ public class Chest : MonoBehaviour, IInteractable
             animator.SetBool("hasInteracted", hasInteracted);
             animator.SetBool("isOpen", isOpen);
 
-            Debug.Log(itemInside.GetItem());
-
+            // If the player does not already have the book item, then add it upon opening the chest
             if (inventory.Contains(itemInside.GetItem()) == null)
             {
                 // Add Book to Inventory

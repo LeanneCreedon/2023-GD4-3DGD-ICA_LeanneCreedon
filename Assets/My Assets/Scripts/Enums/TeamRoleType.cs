@@ -1,6 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 20/12/2023
+/// ---------------------
+/// Script to hold various information types about the project such as team and department type etc.
+/// </summary>
+
 [System.Serializable]
 public class TeamMember
 {

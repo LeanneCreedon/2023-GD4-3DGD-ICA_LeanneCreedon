@@ -9,6 +9,12 @@ using AsyncOperation = UnityEngine.AsyncOperation;
 using Object = UnityEngine.Object;
 
 /// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 15/12/2023
+/// ---------------------
 /// Manages the game flow, scene loading, and persistent objects.
 /// </summary>
 public class MyGameManager : MonoBehaviour

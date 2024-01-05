@@ -1,5 +1,15 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Tutorial Series Followed:
+/// Let's make an Inventory System! ErenCode -
+/// https://www.youtube.com/playlist?list=PLn1X2QyVjFVBM7Gr_-pMhVt3-7rlY5hkx
+/// accessed - 29/12/2023
+/// ---------------------
+/// Manager Script to manage crafting items in the inventory.
+/// </summary>
 public class CraftingManager : MonoBehaviour
 {
     [SerializeField] public InventoryManager inventory;
@@ -39,39 +49,3 @@ public class CraftingManager : MonoBehaviour
         return false; // No matching recipe found
     }
 }
-
-
-/*using UnityEngine;
-
-public class CraftingManager : MonoBehaviour
-{
-    [SerializeField] public InventoryManager inventory;
-    [SerializeField] public CraftingRecipe[] craftingRecipes;
-
-    public void CraftItems(SO_ItemClass item1, SO_ItemClass item2)
-    {
-        CraftingRecipe recipe = FindCraftingRecipe(item1, item2);
-        if (recipe != null)
-        {
-            inventory.Remove(item1.GetItem());
-            inventory.Remove(item2.GetItem());
-
-            inventory.Add(recipe.craftedResult, 1);
-        }
-    }
-
-    private CraftingRecipe FindCraftingRecipe(SO_ItemClass item1, SO_ItemClass item2)
-    {
-        // Search through the crafting recipes to find a match
-        foreach (CraftingRecipe recipe in craftingRecipes)
-        {
-            if ((recipe.inputItem1 == item1 && recipe.inputItem2 == item2) ||
-                (recipe.inputItem1 == item2 && recipe.inputItem2 == item1))
-            {
-                return recipe;
-            }
-        }
-        return null; // No matching recipe found
-    }
-}
-*/

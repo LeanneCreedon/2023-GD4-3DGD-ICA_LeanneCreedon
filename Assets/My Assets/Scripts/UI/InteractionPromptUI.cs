@@ -1,6 +1,16 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Tutorial Followed:
+/// Unity Interaction System | How To Interact With Any Game Object In Unity, Dan Pos -
+/// https://www.youtube.com/watch?v=THmW4YolDok&t=861s
+/// accessed - 19/12/2023
+/// ---------------------
+/// Script for handling the interaction Panel that shows above the player when they are near an interactable object.
+/// </summary>
 public class InteractionPromptUI : MonoBehaviour
 {
     [SerializeField] private Camera _UICam;

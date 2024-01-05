@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4775badd8b8cc4f4ea2cedeb3b22a973, type: 3}
+  m_Script: {fileID: 11500000, guid: 88f6ea7c62803e343885a634df428fc9, type: 3}
   m_Name: OnPickup
   m_EditorClassIdentifier: 
   serializationData:
@@ -21,8 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  UniqueId: 589bb5bf-7bab-4392-88b0-bda260d4fb6a
-  LastUpdated: 01/01/24 16:06:37
+  UniqueId: 4f40d76f-bf9a-4a08-9d71-9e480e6f3af1
+  LastUpdated: 05/01/24 09:22:57
   LastUpdatedBy: 
   Notes: 
   Description: 

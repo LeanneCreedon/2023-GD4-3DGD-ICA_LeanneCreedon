@@ -1,6 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 17/12/2023
+/// ---------------------
+/// Allows us to attach multiple responses to a selected object
+/// </summary>
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField]

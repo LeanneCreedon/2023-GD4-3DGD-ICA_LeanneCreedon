@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 27/12/2023
+/// ---------------------
 /// Stores data relating to a complete game (i.e. multiple levels)
 /// </summary>
 /// <see cref="https://blogs.unity3d.com/2020/07/01/achieve-better-scene-workflow-with-scriptableobjects/"/>

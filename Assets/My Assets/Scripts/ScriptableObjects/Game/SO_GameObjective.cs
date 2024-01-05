@@ -2,6 +2,12 @@
 using UnityEngine;
 
 /// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 27/12/2023
+/// ---------------------
 /// Stores data relating to a level objective
 /// </summary>
 /// <see cref="ARVR.ScriptableTypes.RuntimeGameObjectiveList"/>

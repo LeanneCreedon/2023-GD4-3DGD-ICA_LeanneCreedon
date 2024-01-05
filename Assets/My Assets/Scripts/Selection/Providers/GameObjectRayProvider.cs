@@ -1,5 +1,14 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 26/12/2023
+/// ---------------------
+/// Allows a new ray to be created.
+/// </summary>
 public class GameObjectRayProvider : MonoBehaviour, IRayProvider
 {
     [SerializeField]

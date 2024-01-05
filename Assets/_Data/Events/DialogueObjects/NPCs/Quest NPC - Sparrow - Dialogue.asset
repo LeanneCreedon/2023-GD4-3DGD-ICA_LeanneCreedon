@@ -17,7 +17,7 @@ MonoBehaviour:
     dialogueDisplayTime: 3
   - dialogueText: '"THE MAYOR REALLY WANTS EVERYONE TO GO TO HIS ELECTION BANQUET"'
     dialogueDisplayTime: 4
-  - dialogueText: '"BUT BUT I''M MISSING MY APPLY STOCK! "'
+  - dialogueText: '"BUT I''M MISSING MY APPLE STOCK! "'
     dialogueDisplayTime: 3
   - dialogueText: '"YA SEE THAT EMPTY CRATE OVER THERE?"'
     dialogueDisplayTime: 3

@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 
 /// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 24/12/2023
+/// ---------------------
 /// Attribute that require implementation of the provided interface.
 /// </summary>
 /// <see cref="https://www.patrykgalach.com/2020/01/27/assigning-interface-in-unity-inspector/"/>

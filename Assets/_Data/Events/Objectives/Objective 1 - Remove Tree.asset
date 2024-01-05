@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9375c250604fe4fac28c66b5f9fc17, type: 3}
   m_Name: Objective 1 - Remove Tree
   m_EditorClassIdentifier: 
-  objectiveName: Clear Path
+  objectiveName: Find a Way to Clear the Path
   description: Find a way to remove the tree blocking the path.
   isCompleted: 0

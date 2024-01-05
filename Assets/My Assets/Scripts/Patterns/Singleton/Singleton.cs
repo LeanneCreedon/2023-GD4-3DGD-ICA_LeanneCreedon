@@ -1,5 +1,13 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 29/12/2023
+/// </summary>
+
 //See the following video tutorials before using this class in your code
 //Singletons & Managers in Unity - https://www.youtube.com/watch?v=92NQVeFiDeY
 //Everything You Need to Know About Singletons in Unity - https://www.youtube.com/watch?v=mpM0C6quQjs

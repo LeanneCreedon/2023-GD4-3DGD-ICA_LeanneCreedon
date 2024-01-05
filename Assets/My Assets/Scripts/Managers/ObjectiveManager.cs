@@ -4,16 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Most of this Code Genterated using ChatGTP
+/// Refereces Below
+/// ***********************************************************************************
+/// ChatGPT was used to help develop this implementation of an objective system.
+/// ChatGPT Open AI - https://chat.openai.com/auth/login
+/// accessed - 31/12/2023
+/// ---------------------
+/// Manager Script to manage the objectives of the game.
 /// </summary>
 public class ObjectiveManager : MonoBehaviour
 {
     public List<SO_Objective> objectives;
 
-    [SerializeField] TextMeshProUGUI objectiveText;
+    [SerializeField] public TextMeshProUGUI objectiveText;
     [SerializeField] Image backgroundImg;
 
-    int objectiveIndex;
+    public int objectiveIndex;
 
     // Singleton pattern to ensure only one instance exists
     private static ObjectiveManager _instance;
@@ -37,12 +43,8 @@ public class ObjectiveManager : MonoBehaviour
 
     private void Awake()
     {
-        //Scale background image to length of text element
         objectiveIndex = 0;
         objectiveText.text = objectives[objectiveIndex].objectiveName;
-        //RectTransform uiText = objectiveText.GetComponent<RectTransform>();
-        //RectTransform uiImage = backgroundImg.GetComponent<RectTransform>();
-        //uiImage.sizeDelta = uiText.sizeDelta;
 
         // Ensure only one instance of ObjectiveManager exists
         if (_instance != null && _instance != this)

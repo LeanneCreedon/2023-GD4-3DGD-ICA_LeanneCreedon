@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 24/12/2023
+/// ---------------------
 /// Controls float value over time on a material for a MeshRenderer using coroutines and AnimationCurves.
 /// </summary>
 public class MaterialFloatFadeBehaviour : MonoBehaviour

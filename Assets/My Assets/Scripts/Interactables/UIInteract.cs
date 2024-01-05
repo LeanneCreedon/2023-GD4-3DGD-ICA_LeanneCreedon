@@ -1,6 +1,16 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Tutorial Followed:
+/// Unity Interaction System | How To Interact With Any Game Object In Unity, Dan Pos -
+/// https://www.youtube.com/watch?v=THmW4YolDok&t=861s
+/// accessed - 19/12/2023
+/// ---------------------
+/// Script for handling the UI of the interaction prompt above player.
+/// </summary>
 public class UIInteract : MonoBehaviour
 {
     [SerializeField] UnityEvent OnInteract;

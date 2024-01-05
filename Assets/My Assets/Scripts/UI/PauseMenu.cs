@@ -1,17 +1,18 @@
 using UnityEngine;
 
 /// <summary>
-/// Tutorial Followed: https://www.youtube.com/watch?v=G1AQxNAQV8g
+/// Refereces Below
+/// ***********************************************************************************
+/// Tutorial Followed:
+/// Unity Pause Game - Easy Tutorial (2023), Solo Game Dev -
+/// https://www.youtube.com/watch?v=G1AQxNAQV8g
+/// accessed - 04/01/2024
+/// ---------------------
+/// Script for handling the pause menu.
 /// </summary>
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PausePanel;
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void Pause()
     {

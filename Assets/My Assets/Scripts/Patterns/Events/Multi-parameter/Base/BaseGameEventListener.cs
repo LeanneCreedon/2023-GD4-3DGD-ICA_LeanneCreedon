@@ -1,6 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 28/12/2023
+/// ---------------------
+/// Event Listener to listen for all base game events.
+/// </summary>
 public class BaseGameEventListener<T> : MonoBehaviour
 {
     [SerializeField]

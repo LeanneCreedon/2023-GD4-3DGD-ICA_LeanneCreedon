@@ -2,6 +2,12 @@
 using UnityEngine;
 
 /// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 29/12/2023
+/// ---------------------
 /// Implements Observer pattern to enable us to notify multiple objects about
 /// any events that happen to the GameEvent they’re observing.
 /// </summary>

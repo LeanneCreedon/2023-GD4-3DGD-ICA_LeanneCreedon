@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Quest NPC - Muskrat - Dialogue
   m_EditorClassIdentifier: 
   dialogueSegments:
-  - dialogueText: '"WHY HELLO THERE STRANGER"'
+  - dialogueText: '"WHY HELLO THERE STRANGER!"'
     dialogueDisplayTime: 3
-  - dialogueText: '"MY NAME IS MR RIBBIT"'
+    dialogueChoices: []
+  - dialogueText: '"I''M MR RIBBIT, WHAT IS YOUR NAME?"'
     dialogueDisplayTime: 3
+    dialogueChoices: []
   - dialogueText: '"THIS OLD OAK THREE FELL DOWN IN MY PATH"'
     dialogueDisplayTime: 3
+    dialogueChoices: []
   - dialogueText: '"IF ONLY THERE WAS SOME WAY TO REMOVE IT..."'
     dialogueDisplayTime: 4
+    dialogueChoices: []
   endDialogue: {fileID: 0}

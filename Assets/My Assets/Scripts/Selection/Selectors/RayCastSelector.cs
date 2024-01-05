@@ -1,5 +1,14 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Niall's Repo 2023_GD4_Introduction:
+/// https://github.com/nmcguinness/2023_GD4_Introduction
+/// accessed - 26/12/2023
+/// ---------------------
+/// Used to allow selection of an object based on tag, layerMask, distance. 
+/// </summary>
 public class RayCastSelector : MonoBehaviour, ISelector
 {
     [SerializeField]

@@ -2,16 +2,29 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Refereces Below
+/// ***********************************************************************************
+/// Tutorial Followed:
+/// Click To Move | Unity RPG Tutorial #1 - https://www.youtube.com/watch?v=LVu3_IVCzys
+/// accessed - 22/12/2023
+/// ---------------------
+/// Script for handling the Point & Click Player Controller
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
+    // Animations
     const string IDLE = "Idle_A";
     const string WALK = "Walk";
 
+    // Inputs
     CustomActions input;
 
+    // NavMesh & Animator
     NavMeshAgent agent;
     Animator animator;
 
+    // Events
     public delegate void InputEvents();
     public static event InputEvents OnInteract;
     public static event InputEvents OnEnterInteractable;
@@ -29,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        // Setting inital values for the components
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
@@ -38,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void AssignInputs()
     {
+        // Assigning Player Inputs
         input.Main.Move.performed += ctx => ClickToMove();
         input.Main.Interact.performed += ctx => EToInteract();
     }
@@ -48,6 +63,7 @@ public class PlayerController : MonoBehaviour
         if (isPointerOverUI)
             return;
 
+        // Preventing Player from clicking on an interactable object to move
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
@@ -57,6 +73,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // Setting up the click effect
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
         {
             agent.destination = hit.point;
@@ -67,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
     private void EToInteract()
     {
+        // E to Interact
         if (OnInteract != null) OnInteract();
     }
 
@@ -109,6 +127,7 @@ public class PlayerController : MonoBehaviour
 
     void FaceTarget()
     {
+        // Rotating player to face the target position
         if (agent.velocity != Vector3.zero)
         {
             Vector3 direction = (agent.destination - transform.position).normalized;
@@ -125,10 +144,12 @@ public class PlayerController : MonoBehaviour
         { animator.Play(WALK); }
     }
 
-    private void OnCollisionEnter(Collision collisionInfo)
-    {
-        if (collisionInfo.collider.tag == "Selectable")
-            Debug.Log("We hit : " + collisionInfo.collider.name);
+    // DEBUG - Checking what object the player collided with
 
-    }
+    //private void OnCollisionEnter(Collision collisionInfo)
+    //{
+    //    if (collisionInfo.collider.tag == "Selectable")
+    //        Debug.Log("We hit : " + collisionInfo.collider.name);
+
+    //}
 }
