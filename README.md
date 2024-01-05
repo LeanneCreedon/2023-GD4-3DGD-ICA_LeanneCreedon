@@ -6,9 +6,13 @@ By Leanne Creedon
 
 This repository contains Unity Project Files for my game. 🎲
 
-Instructions for download: [TO_BE_ADDED]
+Instructions for download: 
 
-Link to Screencast: [TO_BE_ADDED]
+> Simply download the zip file and open it up in unity.
+
+Link to Screencast: 
+
+> [TO_BE_ADDED]
 
 ## 📰 Game Description ##
 
@@ -18,7 +22,70 @@ Genre: Point & Click, Social Simulation/Role-Playing, Adventure in 3rd-Person vi
 
 Age Recomendation: Suitable for all age groups, targeted at younger players (PEGI rating would be 3).
 
-Controls: Left-Click = Move, [MORE_TO_BE_ADDED]
+Controls: Left-Click = Move, E = Interact.
+
+## 🚶 Walkthrough ##
+
+> [!TIP]
+> On Start - Menu Loaded - Press Play / Press Exit
+>
+> > On Exit - Exits Application
+> 
+> -> On Play - Walk Around The Scene - Talk to NPC Mr Ribbit - Collect Leaf - Collect Stick - Interact with CampFire - Interact with Tree Blocking Path
+>
+> -> Walk into Fern Village
+> 
+> > In No Particular Order...
+> 
+> -> Talk to NPC Cliff Ferny - Talk to NPC Rupin Merryweather - Talk to NPC P.C. Monty - Talk to NPC Sammy - Talk to NPC Bamble - Talk to NPC Mayor Tobus
+>
+> -> Collect 3 Apples - Place all 3 Apples in Crate - Find Key in Bag - Open Chest with Key - Obtain Special Book from Chest
+>
+> > THE END....for now
+>
+> > The rest would be...
+>
+> -> Give Book to P.C. Monty - Bring all villagers to town hall (they would follow player after their quest is complete) - Talk to Mayor Tobus - He Sends you Home to Reality - Short Cutscene Outro - THE END!
+
+## 🐛 Bugs ##
+
+- [ ] When the torch object is crafted, the 2D sprite is not visable when the torch is first selected after being crafted.
+- [ ] When an item is picked up, the dialogue UI does not disable after the allocated time for it to remain enabled. This is due to the object being destroyed afterwards and therefore the script no longer knows to disable it.
+- [ ] Apple does not always add to the crate when interacted with.
+- [ ] The NavMesh is not smooth in all areas of the map. Some parts are a bit hard to move through due to the mav mesh not covering the ground properly everywhere.
+- [ ] As seen, there is another brach named 'PerformanceDrop'. This branch was created becuase during the attempted implementation of the Objective System, something went wrong and the game started to lag more. The player controller also began to look strange.
+
+## ⭐ Functionality Achieved ##
+
+- Point & CLick Player Controller
+- NavMesh Navigation
+- Inventory
+- Crafting
+- Dialogue
+- Pickups
+- Animations & VFX (Player, NPCs, Chest (shake if no key, open if key), Fire, Leaves Falling)
+- Scene Transition from Main Menu to Game
+- Pause Menu
+- Interaction
+- Simple Quests (Find Key -> Open Chest -> Obtain Book, Find 3 Apples -> Place in Empty Crate, Collect Leaf -> Collect Stick -> Craft Torch -> Set Torch On Fire -> Burn Tree)
+- UI (Menus (main, pause), HUD (inventory, current objective, pause button), Dialogue box with text, Interaction Prompt that changes text based on nearby object)
+- Event System
+- Use of Scriptable Objects for better data
+- Camera Stacks (UI Camera (Overaly), Main Camera)
+- Sounds (Background Music (Menu, Game) & SFX (pickup, NPC mumbling))
+- Drag & Drop Items Functionality on the Inventory HUD
+- Item Quantity Tracker on HUD
+- Pink Selection Highlight OnMouseHover (using third party asset linked below)
+
+## 😞 Uncomplete Components ##
+
+- Objective System not currently being used properly - this is due to the complication of the implementation attempted and the time left to achieve the goal. The obejctive does update one time on the UI but it is not updating based on the objective system. The attemped approach was creating scriptable objects that held the different tasks needed to complete the objective. For example: Find a way to clear the path -> Collect stick, collect leaf, craft torch, set torch on fire, burn tree. This also meant that the progress of the player could not be properly tracked on screen without an objective system set up, so this feature was left out.
+- Final screen letting the player know how they did and or what was learnt from playing the game. For this, it would have been a brief amount of text on screen simply informing the player of the importance of having fum and not taking life too seriously. As the game is about a young boy named William having an innocent dream about waking up in the animal village from his favourite story book, this would have been appropriate.
+- Intro dialogue to set the scene for the story and what was going on.
+- Have the dialogue update when the player does the quest for the NPC.
+- Have the NPC follow the player around the town when they complete their objective. This would all lead up to bringing all the characters to the town hall for the election banquet. When that occurs, the Mayor thanks William and sends him home after helping the towns folk. That was the main goal regarding the level progression.
+- For the inventory items, the original idea was to be able to use the drag and drop functionality to use or do something with the objects collected. Such as drag and drop apple into crate or drag and drop torch into fire. However, as other tasks took priority over this, the item usage controls was left with the E key that is used for interacting with objects and NPCs.
+
 
 ## 🧵 Sources ##
 
@@ -36,6 +103,36 @@ Controls: Left-Click = Move, [MORE_TO_BE_ADDED]
 | 🌲 | Kids character Free | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/3d/characters/kids-character-free-242192 |
 | 🔴 | Point & Click Movement | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=LVu3_IVCzys&t=303s |
 | 🖋️ | Point & Click Movement | [GitHub](https://github.com/) | https://github.com/ItsPogle/Unity-Mouse-Click-Movement-Template/blob/main/Episode%201%20-%20Mouse%20Click%20Movement/Scripts/PlayerController.cs |
+| 🔴 | Simple Dialogue System with Scriptable Objects | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=z3XgjSb_Oh0 |
+| 🔴 | Unity Pause Game - Easy Tutorial (2023) | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=G1AQxNAQV8g |
+| 🔴 | Let's make an Inventory System! | [YouTube](https://www.youtube.com/) | https://www.youtube.com/playlist?list=PLn1X2QyVjFVBM7Gr_-pMhVt3-7rlY5hkx |
+| 🔴 | Unity Interaction System How To Interact With Any Game Object In Unity | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=THmW4YolDok&t=861s |
+| 🎆 | Quick Outline | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/tools/particles-effects/quick-outline-115488 |
+| 🔴 | Outline Object on Pointer Hover and Selection at Runtime in Unity | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=qYnAkMGbgwo |
+| 🖋️ | Outline Object on Pointer Hover and Selection at Runtime in Unity | [GitHub](https://github.com/) | https://github.com/DA-LAB-Tutorials/YouTube-Unity-Tutorials/blob/main/OutlineSelection.cs |
+| ✍️ | Warung Kopi Light | [1001fonts]https://www.1001fonts.com/ | https://www.1001fonts.com/simple+clean-fonts.html |
+| ✍️ | Primer Bold | [1001fonts]https://www.1001fonts.com/ | https://www.1001fonts.com/simple+clean-fonts.html |
+| ✍️ | Odin Rounded | [1001fonts]https://www.1001fonts.com/ | https://www.1001fonts.com/simple+clean-fonts.html |
+| ✍️ | BrookeshappeII.10-p BDZ | [fontspace]https://www.fontspace.com/ | https://www.fontspace.com/category/cute,pencil |
+| 🔨 | Photopea | [Photopea]https://www.photopea.com/ | https://www.photopea.com/ |
+| 🔨 | ChatGPT | [ChatGPT]https://chat.openai.com/ | https://chat.openai.com/ |
+| 🎆 | Ultimate Particle Pack | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/vfx/particles/ultimate-particle-pack-265409 |
+| 🌲 | Lowpoly Wooden Chest | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/3d/props/lowpoly-wooden-chest-93960 |
+| 🌲 | Low Poly Survival Kit MOBILE and VR READY | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/3d/props/tools/low-poly-survival-kit-mobile-and-vr-ready-111978 |
+| 🌲 | Simplistic Low Poly Nature | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/3d/environments/simplistic-low-poly-nature-93894 |
+| 🌲 | Low Poly Fruit Pickups | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/3d/props/food/low-poly-fruit-pickups-98135 |
+| 🌲 | Low-Poly Nature | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/3d/environments/low-poly-nature-260306 |
+| 🎧 | Crazy Town | [Purple Planet](https://www.purple-planet.com/) | https://www.purple-planet.com/tracks/crazy-town |
+| 🎧 | Relaxing Ambient Scene | [Purple Planet](https://www.purple-planet.com/) | https://www.purple-planet.com/tracks/relaxing-ambient-scene |
+| 🎧 | GrandPa004(2.5s).mp3 | [Freesound.org](https://freesound.org/) | https://freesound.org/people/gipsyGA/sounds/128479/ |
+| 🎧 | INCOHERENT SILLY MUMBLING.wav | [Freesound.org](https://freesound.org/) | https://freesound.org/people/metrostock99/sounds/514495/ |
+| 🎧 | Cartoon Mumble Speak | [Freesound.org](https://freesound.org/) | https://freesound.org/people/dersuperanton/sounds/435876/ |
+| 🎧 | Cute Pop Sound Effects | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=QvghQOO3K-I |
+| 🎧 | Pop Sound Effect! FREE TO DOWNLOAD | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=Zw1Xp9wdmog |
+| 🌲 | Stylized Fantasy Key | [Sketchfab](https://sketchfab.com/feed) | https://sketchfab.com/3d-models/stylized-fantasy-key-b5431c53a2ed48db9fde3ebfc59cd56a |
+| 🖼️ | E Key | [FLATICON]([https://sketchfab.com/feed](https://www.flaticon.com/)) | https://www.flaticon.com/free-icon/keyboard-key-e_32007 |
+| 🔴 | Unity TERRAIN Tutorial - Easy and Quick (2023) | [YouTube](https://www.youtube.com/) | https://www.youtube.com/watch?v=DbJB9534PZQ |
+| 🔨 | Odin Inspector | [Unity Asset Store](https://assetstore.unity.com/) | https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041 |
 
 > [!NOTE]
 > **Legend:** 
@@ -46,5 +143,6 @@ Controls: Left-Click = Move, [MORE_TO_BE_ADDED]
 >| 🖋️ | Script |
 >| 🎧 | Sound |
 >| 🌲 | 3D Asset |
->| 🖼️ | Image Texture|
+>| 🖼️ | Image Texture |
 >| ✍️  | Font |
+>| 🎆  | VFX |
